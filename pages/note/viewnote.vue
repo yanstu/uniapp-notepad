@@ -65,8 +65,8 @@ export default {
 }
 .video_box {
 	border: 2px solid #e5e5e5;
-	width: 180rpx;
-	height: 180rpx;
+	width: 480rpx;
+	height: 200rpx;
 }
 .tixing_content {
 	height: 50%;

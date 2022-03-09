@@ -78,26 +78,16 @@ export default {
 				});
 				return;
 			}
-			this.$api.loginOut({
-				success: res => {
-					if (res.data.message.indexOf('成功') > -1) {
-						uni.showToast({
-							icon: 'success',
-							title: '退出成功'
-						});
-						uni.removeStorageSync('userInfo');
-						getApp().stopNoteRemind();
-						this.userInfo = null;
-						uni.reLaunch({
-							url: '/pages/my/index'
-						});
-					} else {
-						uni.showToast({
-							title: res.data.message,
-							icon: 'error'
-						});
-					}
-				}
+			this.$api.loginOut();
+			uni.showToast({
+				icon: 'success',
+				title: '退出成功'
+			});
+			uni.removeStorageSync('userInfo');
+			getApp().stopNoteRemind();
+			this.userInfo = null;
+			uni.reLaunch({
+				url: '/pages/my/index'
 			});
 		},
 		updatePwd() {
